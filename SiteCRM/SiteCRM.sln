@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteCRM.API", "SiteCRM.API\SiteCRM.API.csproj", "{DBBA7029-CA7B-4041-9D6D-6A060B57FED0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteCRM.Application", "SiteCRM.Application\SiteCRM.Application.csproj", "{FB2829AA-7AA5-45E5-AE44-037B6CD88711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteCRM.Core", "SiteCRM.Core\SiteCRM.Core.csproj", "{DFAC4771-B7D4-4090-946E-DBF4536A48F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteCRM.Infrastructure", "SiteCRM.Infrastructure\SiteCRM.Infrastructure.csproj", "{3391B39C-209C-4800-B22D-07A777DC63DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteCRM.UnitTests", "SiteCRM.UnitTests\SiteCRM.UnitTests.csproj", "{38CA8547-5ADC-485A-A062-C4E6D46CC074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteCRM.FrontEnd", "SiteCRM.FrontEnd\SiteCRM.FrontEnd.csproj", "{E3D06A76-C6F3-4761-8B9C-1B4EA194150D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBBA7029-CA7B-4041-9D6D-6A060B57FED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBBA7029-CA7B-4041-9D6D-6A060B57FED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBBA7029-CA7B-4041-9D6D-6A060B57FED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBBA7029-CA7B-4041-9D6D-6A060B57FED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2829AA-7AA5-45E5-AE44-037B6CD88711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2829AA-7AA5-45E5-AE44-037B6CD88711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2829AA-7AA5-45E5-AE44-037B6CD88711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2829AA-7AA5-45E5-AE44-037B6CD88711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFAC4771-B7D4-4090-946E-DBF4536A48F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAC4771-B7D4-4090-946E-DBF4536A48F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAC4771-B7D4-4090-946E-DBF4536A48F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAC4771-B7D4-4090-946E-DBF4536A48F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3391B39C-209C-4800-B22D-07A777DC63DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3391B39C-209C-4800-B22D-07A777DC63DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3391B39C-209C-4800-B22D-07A777DC63DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3391B39C-209C-4800-B22D-07A777DC63DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38CA8547-5ADC-485A-A062-C4E6D46CC074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38CA8547-5ADC-485A-A062-C4E6D46CC074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38CA8547-5ADC-485A-A062-C4E6D46CC074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38CA8547-5ADC-485A-A062-C4E6D46CC074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D06A76-C6F3-4761-8B9C-1B4EA194150D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D06A76-C6F3-4761-8B9C-1B4EA194150D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D06A76-C6F3-4761-8B9C-1B4EA194150D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D06A76-C6F3-4761-8B9C-1B4EA194150D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9D5A044-BE19-447A-B1A2-9E9E9160CA81}
+	EndGlobalSection
+EndGlobal
