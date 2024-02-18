@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
     <base href="/" />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="app.css" />
@@ -13,6 +15,42 @@
 </head>
 
 <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #483D8B;">
+        <img src="" class="img-fluid" alt="Imagem responsiva" width="80" height="80">
+        <a class="navbar-brand" style="color: #F0F8FF;" href="">Teste</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" style="color: #F0F8FF;" href="">Home <span class="sr-only">(atual)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #F0F8FF;" href="">Igreja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #F0F8FF;" href="">Grupos</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link disabled" style="color: #F0F8FF;" href="">Ações Sociais</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" style="color: #F0F8FF;" href="">Pregações</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" style="color: #F0F8FF;" href="">Fale Conosco</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            {* <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> *}
+            <a href="" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
+          </form>
+        </div>
+      </nav>
+    </header>
     <Routes />
     <script src="_framework/blazor.web.js"></script>
 </body>
