@@ -1,0 +1,116 @@
+﻿@page "/Contato"
+
+<h3>Contato</h3>
+
+<img src="{$GET_TEMA}/../media/Banner-contato.jpg" alt="Imagem responsiva" width="100%" height="500px">
+
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row titulo">
+        <div class="col-lg-4">
+            @* {* <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"> *} *@
+            <h3 class="card-title">Culto de Domingo</h3>
+            <p>Culto da Família!</p>
+            <p class="card-text"><small class="text-muted"></small>Ás 18:30hrs</p>
+            @* {* <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> *} *@
+        </div><!-- /.col-lg-4 --><br />
+        <div class="col-lg-4">
+            @* {* <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"> *} *@
+            <h3 class="card-title">Culto de Quinta-feira</h3>
+            <p>Busca pelo Espírito Santo</p>
+            <p class="card-text"><small class="text-muted"></small>Ás 19:30hrs</p>
+            @* {* <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> *} *@
+        </div><!-- /.col-lg-4 --><br />
+        <div class="col-lg-4">
+            @* {* <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"> *} *@
+            <h3 class="card-title">Culto de Terça-feira</h3>
+            <p>Culto de Oração</p>
+            <p class="card-text"><small class="text-muted"></small>Ás 19:30hrs</p>
+            @* {* <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> *} *@
+        </div><!-- /.col-lg-4 --><br />
+    </div><!-- /.row -->
+</div>
+<br />
+<br />
+
+<div class="container">
+    <h4 class="display-6 text-center">Contato Quadrangular Morro Grande</h4>
+    <br />
+    <div class="row">
+        <div class="col col-md-6">
+            <form method="post" action="" enctype="multipart/form-data">
+                <div class="form-group col-md-12">
+                    <div class="alert alert-info" role="alert">
+                        <h5>Informações sobre a Igreja</h5>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputNome4">Nome</label>
+                    <input type="text" name="nome" class="form-control" id="inputNome4" placeholder="Nome">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="inputTelefone4">Telefone</label>
+                    <input type="phone" name="tele" class="form-control" id="inputTelefone4" placeholder="Telefone">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputEmail">E-mail</label>
+                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="E-mail">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="validationTextarea">Mensagem</label>
+                    <textarea name="message" class="form-control" id="validationTextarea" rows="6"></textarea>
+
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="enviar" type="submit" value="Enviar" class="special btn btn-success" />
+                </div>
+            </form>
+        </div>
+
+        <!--Área do formulário de pedido de oração-->
+        <div class="col col-md-6">
+            <div class="form-group col-md-12">
+                <div class="alert alert-warning" role="alert">
+                    <h5>Pedidos de Oração</h5>
+                </div>
+            </div>
+            <form method="post" action="" enctype="multipart/form-data">
+                {* <div class="form-row">
+                </div> *}
+                <div class="form-group col-md-12">
+                    <label for="inputNome4">Nome</label>
+                    <input type="text" name="nomeOracao" class="form-control" id="inputNome4" placeholder="Nome">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="inputTelefone4">Telefone</label>
+                    <input type="phone" name="teleOracao" class="form-control" id="inputTelefone4" placeholder="Telefone">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputEmail">E-mail</label>
+                    <input type="email" name="emailOracao" class="form-control" id="inputEmail" placeholder="E-mail">
+                </div>
+
+                <div class="form-group col-md-12">
+
+                    <label for="validationTextarea">Escreva aqui o seu pedido de oração!</label>
+                    <textarea name="messageOracao" class="form-control" id="validationTextarea" rows="6"></textarea>
+
+                </div>
+
+                <div class="form-group col-md-12">
+                    <input name="enviarOracao" type="submit" value="Enviar" class="special btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+
+@code {
+
+}

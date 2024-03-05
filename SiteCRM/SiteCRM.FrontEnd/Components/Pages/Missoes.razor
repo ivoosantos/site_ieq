@@ -1,0 +1,59 @@
+﻿@page "/Missoes"
+
+<PageTitle>Missões</PageTitle>
+<div class="container">
+    <br />
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+            <h1 class="display-6 font-italic">Ações sociais e trabalhos de Missões</h1>
+            <p class="lead my-6">Aqui você encontra tudo sobre nossos trabalhos sociais e de missões.</p>
+            @* {* <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> *} *@
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        @* {foreach from=$MISSAO item=M} *@
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-300 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">Trabalho sobre:</strong>
+                    <h4 class="mb-0">{$M.titulo}</h4>
+                    <div class="mb-1 text-muted">04/03/2024</div>
+                    <p class="card-text mb-auto">Slug da Página</p>
+                    @* {* <a href="#" class="stretched-link">Continue lendo...</a> *} *@
+                    <form name="clieditar" method="post" action="{$MISSAOATUAL}">
+                        <input type="hidden" name="id" id="id" value="{$M.id}">
+                        <button class="bg-info text-light btn btn-primary btn-block">Continue lendo...</button>
+                        @* {* <div class="card-footer bg-info text-dark">
+                            *}
+                            {* <small style="color: #FFFFFF;">{$G.slug}</small> *}
+                            {*
+                        </div> *} *@
+                    </form>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img class="bd-placeholder-img" width="230" height="300" src="{$M.img}" alt="Imagem de capa do card" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" />
+                    @* {* <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> *} *@
+                </div>
+            </div>
+        </div>
+        @* {/foreach} *@
+    </div>
+
+    @* {* {foreach from=$MISSAO item=M}
+    <div class="card mb-3">
+        <img class="card-img-top" src="{$M.img}" alt="Imagem de capa do card" width="600" height="300" />
+        <div class="card-body">
+            <h5 class="card-title">{$M.titulo}</h5>
+            <p class="card-text">{$M.texto}</p>
+            <p class="card-text"><small class="text-muted">{$M.dataPost}</small></p>
+        </div>
+    </div>
+    {/foreach} *} *@
+
+</div>
+<br />
+
+@code {
+
+}

@@ -21,4 +21,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SiteCRM.Core\SiteCRM.Core.csproj" />
+    <ProjectReference Include="..\SiteCRM.Infrastructure\SiteCRM.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

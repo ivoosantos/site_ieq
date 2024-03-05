@@ -1,0 +1,39 @@
+﻿@page "/Grupos"
+
+<PageTitle>Grupos</PageTitle>
+  
+<img src="{$GET_TEMA}/../media/Banner-grupo.jpg" alt="Imagem responsiva" width="100%" height="500px">
+
+<div class="container">
+        <!-- Example row of columns -->
+        <hr>
+        <div class="row">
+            
+            @* {foreach from=$GRUPO item=G} *@
+                <div class="col-md-3">
+                    @* {* <input type="hidden" name="id" value="{$G.id}" /> *} *@
+                    <img class="card-img-top" src="{$G.img}" alt="Imagem de capa do card" width="300" height="300">
+                    <h4>Líder - <small>{$G.nomeLider}</small></h4>
+                    <p>{$G.slug}</p>
+                    @* {* <p><a class="btn btn-secondary" href="#" role="button">{$G.slug} &raquo;</a></p> *} *@
+                    
+                    <form name="clieditar" method="post" action="{$SOBREGRUPO}">
+                        <input type="hidden" name="id" id="id" value="{$G.id}">
+                        <button class="card-footer bg-info text-light btn btn-primary btn-lg btn-block">{$G.slug}</button>
+                        @* {* <div class="card-footer bg-info text-dark"> *}
+                        {* <small style="color: #FFFFFF;">{$G.slug}</small> *}
+                        {* </div> *} *@
+                    </form> 
+                    <br />
+                </div>
+            @* {/foreach} *@
+                
+        </div>
+
+    <hr>
+
+</div>
+
+@code {
+
+}

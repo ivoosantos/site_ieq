@@ -1,6 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using SiteCRM.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("SiteCRM");
+builder.Services.AddDbContext<SiteCRMDbContext>(p => p.UseNpgsql(connectionString));
+builder.Services.AddHttpClient();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
