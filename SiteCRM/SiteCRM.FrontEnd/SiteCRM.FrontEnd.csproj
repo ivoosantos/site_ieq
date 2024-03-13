@@ -21,4 +21,9 @@
     <None Include="wwwroot\css\.DS_Store" />
   </ItemGroup>
 
+	<ItemGroup>
+		<Reference Include="Microsoft.AspNetCore.Http.Abstractions" />
+		<Reference Include="Microsoft.Net.Http.Headers" />
+	</ItemGroup>
+
 </Project>

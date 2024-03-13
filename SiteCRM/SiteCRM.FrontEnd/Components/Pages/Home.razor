@@ -1,6 +1,6 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>@Teste</PageTitle>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -15,9 +15,9 @@
     <div class="carousel-inner">
 
 
-        {foreach from=$CAROUSEL item=C}
+        @* {foreach from=$CAROUSEL item=C}
 
-        {if $C.active == "1"}
+        {if $C.active == "1"} *@
         <div class="carousel-item active">
             <img src="{$C.img}" alt="First slide" />
             <div class="container">
@@ -28,8 +28,8 @@
                 </div>
             </div>
         </div>
-        {/if}
-        {if $C.active != "1"}
+        @* {/if}
+        {if $C.active != "1"} *@
         <div class="carousel-item">
             <img src="{$C.img}" alt="" />
             <div class="container">
@@ -40,22 +40,22 @@
                 </div>
             </div>
         </div>
-        {/if}
-        {/foreach}
+        @* {/if}
+        {/foreach} *@
 
 
         @* {* {foreach from=$CAROUSEL item=C}
         {if $CONTROLE_ATIVO == 2}
         <div class="carousel-item active">
 
-            <img src="{$C.img}" alt="First slide" />
-            <div class="container">
-                <div class="carousel-caption text-left">
-                    <h1>{$C.titulo}</h1>
-                    <p>{$C.informacao}</p>
-                    <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
-                </div>
-            </div>
+        <img src="{$C.img}" alt="First slide" />
+        <div class="container">
+        <div class="carousel-caption text-left">
+        <h1>{$C.titulo}</h1>
+        <p>{$C.informacao}</p>
+        <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
+        </div>
+        </div>
 
         </div>
         {$CONTROLE_ATIVO = 1}
@@ -65,14 +65,14 @@
 
         <div class="carousel-item">
 
-            <img src="{$C.img}" alt="" />
-            <div class="container">
-                <div class="carousel-caption text-left">
-                    <h1>{$C.titulo}</h1>
-                    <p>{$C.informacao}</p>
-                    <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
-                </div>
-            </div>
+        <img src="{$C.img}" alt="" />
+        <div class="container">
+        <div class="carousel-caption text-left">
+        <h1>{$C.titulo}</h1>
+        <p>{$C.informacao}</p>
+        <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
+        </div>
+        </div>
         </div>
         {/if}
 
@@ -130,37 +130,37 @@
     <hr class="featurette-divider">
 
     @* {* <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">Primeiro título de featurezinhas. <span class="text-muted">Supreendente, não?!</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img04.jpg" alt="Generic placeholder image">
-        </div>
+    <div class="col-md-7">
+    <h2 class="featurette-heading">Primeiro título de featurezinhas. <span class="text-muted">Supreendente, não?!</span></h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img04.jpg" alt="Generic placeholder image">
+    </div>
     </div>
 
     <hr class="featurette-divider">
 
     <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Aêêê, moleque! <span class="text-muted">Tá legal ou não tá?</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img05.jpg" alt="Generic placeholder image">
-        </div>
+    <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading">Aêêê, moleque! <span class="text-muted">Tá legal ou não tá?</span></h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+    <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img05.jpg" alt="Generic placeholder image">
+    </div>
     </div>
 
     <hr class="featurette-divider">
 
     <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">E, por último, essa aqui. <span class="text-muted">Xeque-mate!</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img06.jpg" alt="Generic placeholder image">
-        </div>
+    <div class="col-md-7">
+    <h2 class="featurette-heading">E, por último, essa aqui. <span class="text-muted">Xeque-mate!</span></h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img06.jpg" alt="Generic placeholder image">
+    </div>
     </div> *} *@
 
     @* {* <hr class="featurette-divider"> *} *@
@@ -168,3 +168,8 @@
     <!-- /FIM DAS FEATUREZINHAS *-* -->
 
 </div><!-- /.container marketing -->
+@code {
+    public string Teste { get; set; } = "Oi Testando";
+
+
+}

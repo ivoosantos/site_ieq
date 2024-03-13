@@ -8,19 +8,28 @@ namespace SiteCRM.Core.Entities
 {
     public class Carousel : BaseEntity
     {
+        public Carousel(string img, string titulo, string informacao, string end_url, string active_img)
+        {
+            this.img = img;
+            this.titulo = titulo;
+            this.informacao = informacao;
+            this.end_url = end_url;
+            this.active_img = active_img;
+        }
+
         public string img { get; set; }
         public string titulo { get; set; }
         public string informacao { get; set; }
         public string end_url { get; set; }
         public string active_img { get; set; }
 
-        public Carousel(string img_, string titulo_, string informacao_, string end_url_, string active_img_)
-        {
-            this.img = img_;
-            this.titulo = titulo_;
-            this.informacao = informacao_;
-            this.end_url = end_url_;
-            this.active_img = active_img_;
-        }
+        //public Carousel(string _img, string _titulo, string _informacao, string _end_url, string _active_img)
+        //{
+        //    img = _img;
+        //    titulo = _titulo;
+        //    informacao = _informacao;
+        //    end_url = _end_url;
+        //    active_img = _active_img;
+        //}
     }
 }

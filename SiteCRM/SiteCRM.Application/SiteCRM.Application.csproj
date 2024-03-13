@@ -13,9 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\" />
     <Folder Include="Validators\" />
-    <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SiteCRM.Core\SiteCRM.Core.csproj" />
   </ItemGroup>
 
 </Project>

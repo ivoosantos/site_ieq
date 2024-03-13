@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using SiteCRM.Core.Entities;
 using SiteCRM.Core.Repositories;
@@ -20,9 +21,10 @@ namespace SiteCRM.Infrastructure.Persistence.Repositories
             _connectionString = configuration.GetConnectionString("SiteCRM");
         }
 
-        public Task AddAsync(Sobre sobre)
+        public async Task AddAsync(Sobre sobre)
         {
-            throw new NotImplementedException();
+            await _dbContext.Sobres.AddAsync(sobre);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<List<Sobre>> GetAllAsync() => await _dbContext.Sobres.ToListAsync();
