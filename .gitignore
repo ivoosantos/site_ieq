@@ -332,3 +332,4 @@ ASALocalRun/
 # Nao subir pasta de Migrations
 Migrations/
 *.suo
+/SiteCRM/...
