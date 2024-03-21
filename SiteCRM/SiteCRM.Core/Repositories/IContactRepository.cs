@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace SiteCRM.Core.Repositories
 {
-    public interface IContact
+    public interface IContactRepository
     {
-        Task<Contact> GetAsync();
         Task<Contact> GetByIdAsync(int id);
         Task<List<Contact>> GetAllAsync();
-        Task DeleteAsync(int id);
+        Task DeleteAsync(Contact contact);
         Task AddAsync(Contact contact);
-        Task SaveChangesAsync();
+        //Task SaveChangesAsync();
     }
 }

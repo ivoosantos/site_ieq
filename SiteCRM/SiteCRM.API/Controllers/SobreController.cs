@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SiteCRM.Application.Commands.CreateSobre;
+using SiteCRM.Application.Commands.DeleteSobre;
 using SiteCRM.Application.Queries.GetAllSobres;
 using System.Runtime.InteropServices;
 
@@ -31,6 +32,15 @@ namespace SiteCRM.API.Controllers
             var sobre = await _mediator.Send(command);
 
             return Ok(sobre);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var command = new DeleteSobreCommand(id);
+            await _mediator.Send(command);
+
+            return NoContent();
         }
     }
 }

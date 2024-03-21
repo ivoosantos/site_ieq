@@ -25,8 +25,23 @@ namespace SiteCRM.Infrastructure.Persistence.Repositories
         {
             await _dbContext.Sobres.AddAsync(sobre);
             await _dbContext.SaveChangesAsync();
-        }
+		}
 
-        public async Task<List<Sobre>> GetAllAsync() => await _dbContext.Sobres.ToListAsync();
-    }
+		public async Task<List<Sobre>> GetAllAsync() => await _dbContext.Sobres.ToListAsync();
+
+		public async Task DeleteAsync(Sobre sobre)
+		{
+            //var entity = _dbContext.Sobres.First(x => x.Id == id);
+
+            _dbContext.Sobres.Remove(sobre);
+            await _dbContext.SaveChangesAsync();
+		}
+
+		public Task<Sobre> GetByIdAsync(int id)
+		{
+			var entity = _dbContext.Sobres.FirstOrDefaultAsync(x => x.Id == id);
+
+            return entity;
+		}
+	}
 }

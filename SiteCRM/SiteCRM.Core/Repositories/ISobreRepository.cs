@@ -11,5 +11,7 @@ namespace SiteCRM.Core.Repositories
     {
         Task<List<Sobre>> GetAllAsync();
         Task AddAsync(Sobre sobre);
+        Task DeleteAsync(Sobre sobre);
+        Task<Sobre> GetByIdAsync(int id);
     }
 }

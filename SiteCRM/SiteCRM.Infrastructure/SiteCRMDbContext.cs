@@ -20,6 +20,7 @@ namespace SiteCRM.Infrastructure
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Missoes> Missoes { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserPermissions> UserPermissions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
