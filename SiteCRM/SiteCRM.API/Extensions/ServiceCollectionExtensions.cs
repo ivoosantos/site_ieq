@@ -1,4 +1,6 @@
 ﻿using SiteCRM.Core.Repositories;
+using SiteCRM.Core.Services;
+using SiteCRM.Infrastructure.Auth;
 using SiteCRM.Infrastructure.Persistence.Repositories;
 
 namespace SiteCRM.API.Extensions
@@ -11,6 +13,7 @@ namespace SiteCRM.API.Extensions
             services.AddScoped<IGrupoRepository, GrupoRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAuthService, AuthService>();
 
             return services;
         }
