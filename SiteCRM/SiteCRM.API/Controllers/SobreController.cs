@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SiteCRM.Application.Commands.CreateSobre;
 using SiteCRM.Application.Commands.DeleteSobre;
@@ -8,6 +9,7 @@ using System.Runtime.InteropServices;
 namespace SiteCRM.API.Controllers
 {
     [Route("api/sobres")]
+    [Authorize]
     public class SobreController : ControllerBase
     {
         private readonly IMediator _mediator;

@@ -39,10 +39,10 @@ namespace SiteCRM.Infrastructure.Auth
 
 		public string GenerateJwtToken(string email, string role)
 		{
-			var issuer = _configuration[""];
-			var audience = _configuration[""];
+			var issuer = _configuration["Jwt:Issuer"];
+			var audience = _configuration["Jwt:Audience"];
 
-			var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration[""]));
+			var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
 			var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
 			var claims = new List<Claim>

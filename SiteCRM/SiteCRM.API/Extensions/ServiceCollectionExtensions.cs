@@ -14,6 +14,7 @@ namespace SiteCRM.API.Extensions
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IMissoesRepository, MissoesRepository>();
 
             return services;
         }

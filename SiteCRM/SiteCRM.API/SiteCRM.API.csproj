@@ -23,4 +23,8 @@
     <ProjectReference Include="..\SiteCRM.Infrastructure\SiteCRM.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Storage\" />
+  </ItemGroup>
+
 </Project>
