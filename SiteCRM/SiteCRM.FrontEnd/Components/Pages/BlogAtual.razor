@@ -1,0 +1,46 @@
+﻿@page "/BlogAtual/{id:int}"
+@using System.Net.Http.Json
+@using SiteCRM.FrontEnd.Models
+@inject HttpClient http
+
+<PageTitle>@titulo</PageTitle>
+
+<div class="container">
+    <br />
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">Pregação sobre</h1>
+            <h4 class="lead my-3">@titulo</h4>
+            <p class="lead mb-0"><a href="#conteudo" class="text-white font-weight-bold">Leia abaixo...</a></p>
+        </div>
+    </div>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-12 blog-main" id="conteudo">
+                <div class="blog-post">
+                    <h2 class="blog-post-title">@titulo</h2>
+                    <p class="blog-post-meta">@slug</p>
+
+                    <p>@descricao</p>
+                    <hr>
+                    
+                </div><!-- /.blog-post -->
+
+                <nav class="blog-pagination">
+                    <a class="btn btn-outline-primary" href="/Blog">Voltar</a>
+                </nav>
+
+            </div><!-- /.blog-main -->
+        </div><!-- /.row -->
+    </main><!-- /.container -->
+</div>
+
+@code {
+    public string id { get; set; }
+    public string titulo { get; set; }
+    public string slug { get; set; }
+    public string descricao { get; set; }
+    public string img { get; set; }
+
+
+}

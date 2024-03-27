@@ -1,29 +1,41 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SiteCRM.Application.ViewModels
 {
-    public class MissoesViewModel
-    {
+    public class MissoesViewModel : ImageViewModel
+	{
         public int id { get; set; }
         public string titulo { get; set; }
         public string slug { get; set; }
         public string texto { get; set; }
-        public IFormFile img { get; set; }
-        public DateTime dataPost { get; set; }
 
-        public MissoesViewModel(int id_, string titulo_, string slug_, string texto_, IFormFile img_, DateTime dataPost_)
+		//[IgnoreDataMember]
+		//[BindNever]
+		public string img { get; set; }
+        public DateTime dataPost { get; set; } = DateTime.Now.ToUniversalTime();
+
+        public virtual byte[] imgByte { get; set; }
+
+        public MissoesViewModel()
         {
-            this.id = id_;
-            this.titulo = titulo_;
-            this.slug = slug_;
-            this.texto = texto_;
-            this.img = img_;
-            this.dataPost = dataPost_;
+            
         }
-    }
+
+		public MissoesViewModel(int id, string titulo, string slug, string texto, string img, DateTime dataPost)
+		{
+			this.id = id;
+			this.titulo = titulo;
+			this.slug = slug;
+			this.texto = texto;
+			this.img = img;
+			this.dataPost = dataPost;
+		}
+	}
 }

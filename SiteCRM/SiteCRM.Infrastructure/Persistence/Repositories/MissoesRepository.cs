@@ -22,6 +22,7 @@ namespace SiteCRM.Infrastructure.Persistence.Repositories
 
         public async Task AddAsync(Missoes missoes)
 		{
+			missoes.dataPost = DateTime.Now.ToUniversalTime();
 			await _dbContext.Missoes.AddAsync(missoes);
 			await _dbContext.SaveChangesAsync();
 		}

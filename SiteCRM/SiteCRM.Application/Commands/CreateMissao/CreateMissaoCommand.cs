@@ -13,7 +13,7 @@ namespace SiteCRM.Application.Commands.CreateMissao
 		public string titulo { get; set; }
 		public string slug { get; set; }
 		public string texto { get; set; }
-		public IFormFile img { get; set; }
+		public string img { get; set; }
 		public DateTime dataPost { get; set; } = DateTime.Now;
 	}
 }

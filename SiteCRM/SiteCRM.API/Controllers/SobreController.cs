@@ -27,6 +27,7 @@ namespace SiteCRM.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             var command = new GetAllSobresQuery();

@@ -19,7 +19,7 @@
 
         {if $C.active == "1"} *@
         <div class="carousel-item active">
-            <img src="{$C.img}" alt="First slide" />
+            <img src="image/Banner-contato.jpg" alt="First slide" />
             <div class="container">
                 <div class="carousel-caption text-left">
                     <h1>{$C.titulo}</h1>
@@ -31,7 +31,7 @@
         @* {/if}
         {if $C.active != "1"} *@
         <div class="carousel-item">
-            <img src="{$C.img}" alt="" />
+            <img src="image/Banner-grupo.jpg" alt="" />
             <div class="container">
                 <div class="carousel-caption text-left">
                     <h1>{$C.titulo}</h1>
@@ -42,42 +42,6 @@
         </div>
         @* {/if}
         {/foreach} *@
-
-
-        @* {* {foreach from=$CAROUSEL item=C}
-        {if $CONTROLE_ATIVO == 2}
-        <div class="carousel-item active">
-
-        <img src="{$C.img}" alt="First slide" />
-        <div class="container">
-        <div class="carousel-caption text-left">
-        <h1>{$C.titulo}</h1>
-        <p>{$C.informacao}</p>
-        <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
-        </div>
-        </div>
-
-        </div>
-        {$CONTROLE_ATIVO = 1}
-        {/if}
-
-        {if $CONTROLE_ATIVO == 1}
-
-        <div class="carousel-item">
-
-        <img src="{$C.img}" alt="" />
-        <div class="container">
-        <div class="carousel-caption text-left">
-        <h1>{$C.titulo}</h1>
-        <p>{$C.informacao}</p>
-        <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
-        </div>
-        </div>
-        </div>
-        {/if}
-
-        {/foreach} *}
-        {* {$CONTROLE_ATIVO = 2} *} *@
 
     </div><!--class="carousel-inner"-->
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -101,25 +65,25 @@
     <!-- Quatro colunas de texto, abaixo do carousel -->
     <div class="row">
         <div class="col-lg-3">
-            <img class="rounded-circle" src="{$GET_TEMA}/../media/salva.png" alt="Salva" width="140" height="140">
+            <img class="rounded-circle" src="image/salva.png" alt="Salva" width="140" height="140">
             <h2>Salva</h2>
             <p>Tipifica o sangue de Cristo que foi derramado na cruz,a fim de nos dar a Salvação.</p>
             @* {* <p><a class="btn btn-secondary" href="#" role="button">Mais detalhes &raquo;</a></p> *} *@
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-3">
-            <img class="rounded-circle" src="{$GET_TEMA}/../media/batiza.png" alt="Salva" width="140" height="140">
+            <img class="rounded-circle" src="image/batiza.png" alt="Salva" width="140" height="140">
             <h2>Batiza</h2>
             <p>Tipifica o batismo com o Espírito Santo.</p>
             @* {* <p><a class="btn btn-secondary" href="#" role="button">Mais detalhes &raquo;</a></p> *} *@
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-3">
-            <img class="rounded-circle" src="{$GET_TEMA}/../media/cura.png" alt="Cura" width="140" height="140">
+            <img class="rounded-circle" src="image/cura.png" alt="Cura" width="140" height="140">
             <h2>Cura</h2>
             <p>Tipifica a cura divina.</p>
             @* {* <p><a class="btn btn-secondary" href="#" role="button">Mais detalhes &raquo;</a></p> *} *@
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-3">
-            <img class="rounded-circle" src="{$GET_TEMA}/../media/voltara.png" alt="Reina" width="140" height="140">
+            <img class="rounded-circle" src="image/voltara.png" alt="Reina" width="140" height="140">
             <h2>Reinará</h2>
             <p>Tipifica a volta de Jesus como Rei.</p>
             @* {* <p><a class="btn btn-secondary" href="#" role="button">Mais detalhes &raquo;</a></p> *} *@
@@ -169,7 +133,7 @@
 
 </div><!-- /.container marketing -->
 @code {
-    public string Teste { get; set; } = "Oi Testando";
+    public string Teste { get; set; } = "Home";
 
 
 }

@@ -1,4 +1,7 @@
 ﻿@page "/Blog"
+@using System.Net.Http.Json
+@using SiteCRM.FrontEnd.Models
+@inject HttpClient http
 
 <PageTitle>Blog</PageTitle>
 
@@ -77,5 +80,9 @@
 <br />
 
 @code {
+    public string titulo { get; set; }
+    public string slug { get; set; }
+    public string descricao { get; set; }
+    public string img { get; set; }
 
 }

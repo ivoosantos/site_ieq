@@ -11,7 +11,12 @@ namespace SiteCRM.Infrastructure
 {
     public class SiteCRMDbContext : DbContext
     {
-        public SiteCRMDbContext(DbContextOptions<SiteCRMDbContext> options) : base(options) { }
+        public SiteCRMDbContext(DbContextOptions<SiteCRMDbContext> options) : base(options) 
+        {
+			ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+			AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+			AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+		}
 
         public DbSet<Sobre> Sobres { get; set; }
         public DbSet<Carousel> Carousels { get; set; }

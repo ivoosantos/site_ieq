@@ -24,58 +24,57 @@
 
 <body>
     <header>
-      <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #483D8B;">
-        <img src="" class="img-fluid" alt="Imagem responsiva" width="80" height="80">
-        <a class="navbar-brand" style="color: #F0F8FF;" href="">Teste</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" style="color: #F0F8FF;" href="">Home <span class="sr-only">(atual)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: #F0F8FF;" href="/Sobre">Igreja</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: #F0F8FF;" href="">Grupos</a>
-            </li>
-            
-            <li class="nav-item">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #483D8B;">
+            <img src="image/logo.png" class="img-fluid" alt="Imagem responsiva" width="80" height="80">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color: #F0F8FF;" href="">Home <span class="sr-only">(atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #F0F8FF;" href="/Sobre">Igreja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #F0F8FF;" href="/Grupos">Grupos</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link disabled" style="color: #F0F8FF;" href="/Missoes">Ações Sociais</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" style="color: #F0F8FF;" href="">Pregações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" style="color: #F0F8FF;" href="">Fale Conosco</a>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            @* <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> *@
-            <a href="" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
-          </form>
-        </div>
-      </nav>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" style="color: #F0F8FF;" href="/Blog">Pregações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" style="color: #F0F8FF;" href="/Contato">Fale Conosco</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    @* <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> *@
+                    <a href="" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
+                </form>
+            </div>
+        </nav>
     </header>
     <Routes />
-<!-- Footer -->
-    <hr/>
+    <!-- Footer -->
+    <hr />
     <div class="blog-footer">
-      <div class="container">
-        <h4 class="display-8">Nossas Redes Sociais.</h4><br />
-        <a href="https://pt-br.facebook.com/ieq.morrogrande" target="_blank"><img src="{$GET_TEMA}/../media/facebook.png"  width="50" height="50" alt="..." class="rounded-circle"></a>
-        <a href="https://www.instagram.com/ieqmorrograndeoficial/" target="_blank"><img src="{$GET_TEMA}/../media/instagram-icon.png"  width="50" height="50" alt="..." class="rounded-circle"></a>
-        <a href="http://www.youtube.com/channel/UC4TR30m61jWdz-D6ki7UpsQ" target="_blank"><img src="{$GET_TEMA}/../media/youtube.png"  width="50" height="50" alt="..." class="rounded-circle"></a>
-      </div>
-      <br />
-      <footer class="container">
-        <p class="float-right"><a href="#">Voltar ao topo</a></p>
-        @* <p>&copy; Igreja do Evangelho Quadrangular - Morro Grande, 1988-{$DATA2} &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos</a></p> *@
-        <p>&copy; Igreja do Evangelho Quadrangular - Morro Grande, 1988-2024 </p>
-      <p class="float-center">Desenvolvido por Ivo Oliveira <a href="https://www.soidesign.com.br" target="_blank"></a></p>
-      </footer>
+        <div class="container">
+            <h4 class="display-8">Nossas Redes Sociais.</h4><br />
+            <a href="https://pt-br.facebook.com/ieq.morrogrande" target="_blank"><img src="image/facebook.png" width="50" height="50" alt="..." class="rounded-circle"></a>
+            <a href="https://www.instagram.com/ieqmorrograndeoficial/" target="_blank"><img src="image/instagram-icon.png" width="50" height="50" alt="..." class="rounded-circle"></a>
+            <a href="http://www.youtube.com/channel/UC4TR30m61jWdz-D6ki7UpsQ" target="_blank"><img src="image/youtube.png" width="50" height="50" alt="..." class="rounded-circle"></a>
+        </div>
+        <br />
+        <footer class="container">
+            <p class="float-right"><a href="#">Voltar ao topo</a></p>
+            @* <p>&copy; Igreja do Evangelho Quadrangular - Morro Grande, 1988-{$DATA2} &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos</a></p> *@
+            <p>&copy; Igreja do Evangelho Quadrangular - Morro Grande, 1988-2024 </p>
+            <p class="float-center">Desenvolvido por Ivo Oliveira <a href="https://www.soidesign.com.br" target="_blank"></a></p>
+        </footer>
     </div>
     <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
