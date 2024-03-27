@@ -1,7 +1,139 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>@Teste</PageTitle>
 
-<h1>Hello, world!</h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {foreach from=$CAROUSEL item=C}
+        <li data-target="#myCarousel" data-slide-to="{$C.id}"></li>
+        {/foreach}
+        @* {*
+        <li data-target="#myCarousel"></li>
+        <li data-target="#myCarousel"></li>
+        <li data-target="#myCarousel"></li> *} *@
+    </ol>
+    <div class="carousel-inner">
 
-Welcome to your new app.
+
+        @* {foreach from=$CAROUSEL item=C}
+
+        {if $C.active == "1"} *@
+        <div class="carousel-item active">
+            <img src="image/Banner-contato.jpg" alt="First slide" />
+            <div class="container">
+                <div class="carousel-caption text-left">
+                    <h1>{$C.titulo}</h1>
+                    <p>{$C.informacao}</p>
+                    <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
+                </div>
+            </div>
+        </div>
+        @* {/if}
+        {if $C.active != "1"} *@
+        <div class="carousel-item">
+            <img src="image/Banner-grupo.jpg" alt="" />
+            <div class="container">
+                <div class="carousel-caption text-left">
+                    <h1>{$C.titulo}</h1>
+                    <p>{$C.informacao}</p>
+                    <p><a class="btn btn-lg btn-primary" href="http://{$C.end_url}" role="button">Saiba Mais</a></p>
+                </div>
+            </div>
+        </div>
+        @* {/if}
+        {/foreach} *@
+
+    </div><!--class="carousel-inner"-->
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Voltar</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Avançar</span>
+    </a>
+</div>
+
+
+
+<!-- Mensagens de marketing e outras featurezinhas
+================================================== -->
+<!-- Envolve o resto da página em outro container, para centralizar todo o conteúdo. -->
+
+<div class="container marketing">
+
+    <!-- Quatro colunas de texto, abaixo do carousel -->
+    <div class="row">
+        <div class="col-lg-3">
+            <img class="rounded-circle" src="image/salva.png" alt="Salva" width="140" height="140">
+            <h2>Salva</h2>
+            <p>Tipifica o sangue de Cristo que foi derramado na cruz,a fim de nos dar a Salvação.</p>
+            @* {* <p><a class="btn btn-secondary" href="#" role="button">Mais detalhes &raquo;</a></p> *} *@
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img class="rounded-circle" src="image/batiza.png" alt="Salva" width="140" height="140">
+            <h2>Batiza</h2>
+            <p>Tipifica o batismo com o Espírito Santo.</p>
+            @* {* <p><a class="btn btn-secondary" href="#" role="button">Mais detalhes &raquo;</a></p> *} *@
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img class="rounded-circle" src="image/cura.png" alt="Cura" width="140" height="140">
+            <h2>Cura</h2>
+            <p>Tipifica a cura divina.</p>
+            @* {* <p><a class="btn btn-secondary" href="#" role="button">Mais detalhes &raquo;</a></p> *} *@
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img class="rounded-circle" src="image/voltara.png" alt="Reina" width="140" height="140">
+            <h2>Reinará</h2>
+            <p>Tipifica a volta de Jesus como Rei.</p>
+            @* {* <p><a class="btn btn-secondary" href="#" role="button">Mais detalhes &raquo;</a></p> *} *@
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    <!-- COMEÇAM AS MENCIONADAS FEATUREZINHAS xD -->
+
+    <hr class="featurette-divider">
+
+    @* {* <div class="row featurette">
+    <div class="col-md-7">
+    <h2 class="featurette-heading">Primeiro título de featurezinhas. <span class="text-muted">Supreendente, não?!</span></h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img04.jpg" alt="Generic placeholder image">
+    </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading">Aêêê, moleque! <span class="text-muted">Tá legal ou não tá?</span></h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+    <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img05.jpg" alt="Generic placeholder image">
+    </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+    <div class="col-md-7">
+    <h2 class="featurette-heading">E, por último, essa aqui. <span class="text-muted">Xeque-mate!</span></h2>
+    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" src="{$GET_TEMA}/../media/img06.jpg" alt="Generic placeholder image">
+    </div>
+    </div> *} *@
+
+    @* {* <hr class="featurette-divider"> *} *@
+    <br />
+    <!-- /FIM DAS FEATUREZINHAS *-* -->
+
+</div><!-- /.container marketing -->
+@code {
+    public string Teste { get; set; } = "Home";
+
+
+}

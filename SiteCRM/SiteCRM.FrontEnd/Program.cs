@@ -1,7 +1,8 @@
 using SiteCRM.FrontEnd.Components;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<HttpClient>();
 // Add services to the container.
 builder.Services.AddRazorComponents()
 	.AddInteractiveServerComponents();
