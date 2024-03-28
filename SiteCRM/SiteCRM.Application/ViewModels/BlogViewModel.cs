@@ -8,6 +8,7 @@ namespace SiteCRM.Application.ViewModels
 {
     public class BlogViewModel : ImageViewModel
     {
+        public BlogViewModel() {}
         public BlogViewModel(int id, string titulo, string slug, string texto, string img)
         {
             this.id = id;

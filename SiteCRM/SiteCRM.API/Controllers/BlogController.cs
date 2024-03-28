@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SiteCRM.Application.Commands.CreateBlog;
+using SiteCRM.Application.Commands.DeleteBlog;
 using SiteCRM.Application.Queries.GetAllBlog;
 using SiteCRM.Application.Queries.GetByIdBlog;
 using SiteCRM.Application.ViewModels;
@@ -21,6 +22,7 @@ namespace SiteCRM.API.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Post([FromForm]BlogViewModel blogViewModel)
         {
             var filePath = Path.Combine("Storage", blogViewModel.File.FileName);
@@ -43,12 +45,13 @@ namespace SiteCRM.API.Controllers
 
         [HttpGet]
         [Route("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetById(int id)
         {
             var blog = new GetByIdBlogQuery(id);
 
             var respBlog = await _mediator.Send(blog);
-
+            if (respBlog == null) return NotFound();
             respBlog.imgByte = await System.IO.File.ReadAllBytesAsync(respBlog.img);
 
             return Ok(respBlog);
@@ -56,6 +59,7 @@ namespace SiteCRM.API.Controllers
 
         [HttpGet]
         [Route("listar")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAll()
         {
             var command = new GetAllBlogQuery();
@@ -72,9 +76,10 @@ namespace SiteCRM.API.Controllers
 
         [HttpDelete]
         [Route("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> Delete(int id)
         {
-            var blog = new GetByIdBlogQuery(id);
+            var blog = new DeleteBlogCommand(id);
             var del = await _mediator.Send(blog);
             return NoContent();
         }
