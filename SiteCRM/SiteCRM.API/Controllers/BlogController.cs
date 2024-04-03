@@ -23,20 +23,20 @@ namespace SiteCRM.API.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Post([FromForm]BlogViewModel blogViewModel)
+        public async Task<IActionResult> Post([FromForm] CreateBlogCommand command)
         {
-            var filePath = Path.Combine("Storage", blogViewModel.File.FileName);
+            var filePath = Path.Combine("Storage", command.File.FileName);
             using Stream fileStream = new FileStream(filePath, FileMode.Create);
-            blogViewModel.File.CopyTo(fileStream);
+            command.File.CopyTo(fileStream);
             fileStream.FlushAsync().Wait();
 
-            var command = new CreateBlogCommand
-            {
-                titulo = blogViewModel.titulo,
-                slug = blogViewModel.slug,
-                texto = blogViewModel.texto,
-                img = filePath
-            };
+            //var command = new CreateBlogCommand
+            //{
+            //    titulo = blogViewModel.titulo,
+            //    slug = blogViewModel.slug,
+            //    texto = blogViewModel.texto,
+            //    img = filePath
+            //};
 
             var resp =  await _mediator.Send(command);
 

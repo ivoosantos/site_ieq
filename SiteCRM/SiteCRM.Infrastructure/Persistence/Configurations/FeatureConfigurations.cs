@@ -14,6 +14,10 @@ namespace SiteCRM.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Feature> builder)
         {
             builder.HasKey(f  => f.Id);
+            builder
+                .HasOne(f => f.Igreja)
+                .WithMany()
+                .HasForeignKey(f => f.IdIgreja);
         }
     }
 }

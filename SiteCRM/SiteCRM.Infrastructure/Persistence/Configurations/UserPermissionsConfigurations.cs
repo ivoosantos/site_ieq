@@ -13,7 +13,11 @@ namespace SiteCRM.Infrastructure.Persistence.Configurations
 	{
 		public void Configure(EntityTypeBuilder<UserPermissions> builder)
 		{
-			builder.HasKey(x => x.Id);
-		}
+			builder.HasKey(up => up.Id);
+            builder
+                .HasOne(up => up.Igreja)
+                .WithMany()
+                .HasForeignKey(up => up.IdIgreja);
+        }
 	}
 }

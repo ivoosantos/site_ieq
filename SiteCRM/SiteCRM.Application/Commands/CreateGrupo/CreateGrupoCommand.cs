@@ -17,5 +17,6 @@ namespace SiteCRM.Application.Commands.CreateGrupo
         public string categoria { get; set; }
         public string nome { get; set; }
         public virtual IFormFile File { get; set; }
+        public int idIgreja { get; private set; }
     }
 }

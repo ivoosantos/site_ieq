@@ -26,7 +26,7 @@ namespace SiteCRM.Application.Commands.CreateGrupo
             request.File.CopyTo(fileStream);
             fileStream.FlushAsync().Wait();
 
-            var grupo = new Grupo(filePath, request.titulo, request.descricao, request.slug, request.categoria, request.nome);
+            var grupo = new Grupo(filePath, request.titulo, request.descricao, request.slug, request.categoria, request.nome, request.idIgreja);
 
             await _grupoRepository.AddAsync(grupo);
             return grupo.Id;

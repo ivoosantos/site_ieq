@@ -8,25 +8,20 @@ namespace SiteCRM.Core.Entities
 {
     public class Feature : BaseEntity
     {
-        public Feature(string titulo, string slug, string descricao, string img)
+        public Feature(string titulo, string slug, string descricao, string img, int idIgreja)
         {
             this.titulo = titulo;
             this.slug = slug;
             this.descricao = descricao;
             this.img = img;
+            this.IdIgreja = idIgreja;
         }
 
         public string titulo { get; set; }
         public string slug { get; set; }
         public string descricao { get; set; }
         public string img { get; set; }
-
-        //public Feature(string titulo_, string slug_, string descricao_, string img_)
-        //{
-        //    this.titulo = titulo_;
-        //    this.slug = slug_;
-        //    this.descricao = descricao_;
-        //    this.img = img_;
-        //}
+        public int IdIgreja { get; private set; }
+        public Igreja Igreja { get; private set; }
     }
 }

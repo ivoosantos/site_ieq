@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SiteCRM.Application.ViewModels
 {
-    public class MissoesViewModel : ImageViewModel
+    public class MissoesViewModel
 	{
         public int id { get; set; }
         public string titulo { get; set; }
