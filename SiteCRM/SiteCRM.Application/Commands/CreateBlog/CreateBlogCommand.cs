@@ -16,5 +16,6 @@ namespace SiteCRM.Application.Commands.CreateBlog
         public string img { get; set; } = string.Empty;
         public DateTime dataPost { get; set; }
         public IFormFile File { get; set; }
+        public int idIgreja { get; set; }
     }
 }

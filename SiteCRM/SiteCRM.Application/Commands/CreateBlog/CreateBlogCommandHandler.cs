@@ -20,7 +20,7 @@ namespace SiteCRM.Application.Commands.CreateBlog
 
         public async Task<int> Handle(CreateBlogCommand request, CancellationToken cancellationToken)
         {
-            var blog = new Blog(request.titulo, request.slug, request.texto, request.img);
+            var blog = new Blog(request.titulo, request.slug, request.texto, request.img, request.idIgreja);
 
             await _blogRepository.AddAsync(blog);
 

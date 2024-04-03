@@ -19,7 +19,7 @@ namespace SiteCRM.Application.Commands.CreateSobre
 
         public async Task<int> Handle(CreateSobreCommand request, CancellationToken cancellationToken)
         {
-            var sobre = new Sobre(request.titulo, request.descricao, request.tipo);
+            var sobre = new Sobre(request.titulo, request.descricao, request.tipo, request.idIgreja);
 
             await _sobreRepository.AddAsync(sobre);
 
