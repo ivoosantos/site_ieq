@@ -23,21 +23,21 @@ namespace SiteCRM.API.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Post([FromForm]MissoesViewModel viewModel)
+		public async Task<IActionResult> Post([FromForm] CreateMissaoCommand command)
 		{
-			var filePath = Path.Combine("Storage", viewModel.File.FileName);
+			var filePath = Path.Combine("Storage", command.File.FileName);
 			using Stream fileStream = new FileStream(filePath, FileMode.Create);
-			viewModel.File.CopyTo(fileStream);
+            command.File.CopyTo(fileStream);
 			fileStream.FlushAsync().Wait();
 
 			//var missao = new Missoes(viewModel.titulo, viewModel.slug, viewModel.texto, filePath);
-			var command = new CreateMissaoCommand
-			{
-				titulo = viewModel.titulo,
-				slug = viewModel.slug,
-				texto = viewModel.texto,
-				img = filePath
-			};
+			//var command = new CreateMissaoCommand
+			//{
+			//	titulo = viewModel.titulo,
+			//	slug = viewModel.slug,
+			//	texto = viewModel.texto,
+			//	img = filePath
+			//};
 
 			var resp = await _mediator.Send(command);
 			

@@ -13,5 +13,6 @@ namespace SiteCRM.Application.Commands.CreateUser
 		public string user_nome { get; set; }
 		public string user_senha { get; set; }
 		public string user_tipo { get; set; }
-	}
+        public int idIgreja { get; set; }
+    }
 }

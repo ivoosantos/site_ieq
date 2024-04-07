@@ -13,9 +13,11 @@ namespace SiteCRM.Application.ViewModels
         public string titulo { get; set; }
         public string informacao { get; set; }
         public string end_url { get; set; }
-        public string active_img { get; set; }
+        public bool active_img { get; set; }
+        public int idIgreja { get; set; }
+        public virtual byte[] imgByte { get; set; }
 
-        public CarouselViewModel(int id_, string img_, string titulo_, string informacao_, string end_url_, string active_img_)
+        public CarouselViewModel(int id_, string img_, string titulo_, string informacao_, string end_url_, bool active_img_, int idIgreja)
         {
             this.id = id_;
             this.img = img_;
@@ -23,6 +25,7 @@ namespace SiteCRM.Application.ViewModels
             this.informacao = informacao_;
             this.end_url = end_url_;
             this.active_img = active_img_;
+            this.idIgreja = idIgreja;
         }
     }
 }

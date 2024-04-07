@@ -24,7 +24,7 @@ namespace SiteCRM.Application.Commands.CreateUser
 		{
 			var passaword = _authService.ComputeSha256Hash(request.user_senha);
 
-			var user = new User(request.user_email, request.user_nome, passaword, request.user_tipo);
+			var user = new User(request.user_email, request.user_nome, passaword, request.user_tipo, request.idIgreja);
 
 			await _dbContext.Users.AddAsync(user);
 			await _dbContext.SaveChangesAsync();

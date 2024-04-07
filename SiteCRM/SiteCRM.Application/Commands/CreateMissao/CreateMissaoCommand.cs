@@ -15,5 +15,7 @@ namespace SiteCRM.Application.Commands.CreateMissao
 		public string texto { get; set; }
 		public string img { get; set; }
 		public DateTime dataPost { get; set; } = DateTime.Now;
-	}
+        public IFormFile File { get; set; }
+        public int idIgreja { get; set; }
+    }
 }
