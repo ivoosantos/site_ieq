@@ -8,23 +8,19 @@ namespace SiteCRM.Core.Entities
 {
     public class Sobre : BaseEntity
     {
-        public Sobre(string titulo, string descricao, string tipo)
+        public Sobre(string titulo, string descricao, string tipo, int idIgreja)
         {
             this.titulo = titulo;
             this.descricao = descricao;
             this.tipo = tipo;
+            this.IdIgreja = idIgreja;
         }
 
         public string titulo { get; set; }
         public string descricao { get; set; }
         public string tipo { get; set; }
-
-        //public Sobre(string titulo_, string descricao_, string tipo_)
-        //{
-        //    this.titulo = titulo_;
-        //    this.descricao = descricao_;
-        //    this.tipo = tipo_;
-        //}
+        public int IdIgreja { get; private set; }
+        public Igreja Igreja { get; private set; }
 
         public void Update(string _titulo,  string _descricao, string _tipo)
         {

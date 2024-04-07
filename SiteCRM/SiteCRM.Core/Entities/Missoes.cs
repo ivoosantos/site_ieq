@@ -9,13 +9,13 @@ namespace SiteCRM.Core.Entities
 {
     public class Missoes : BaseEntity
     {
-        public Missoes(string titulo, string slug, string texto, string img)
+        public Missoes(string titulo, string slug, string texto, string img, int idIgreja)
         {
             this.titulo = titulo;
             this.slug = slug;
             this.texto = texto;
             this.img = img;
-            //this.dataPost = $"{DateTime.Now.Year}/{DateTime.Now.Month}/{DateTime.Now.Day}";
+            this.IdIgreja = idIgreja;
         }
         public Missoes() {}
 
@@ -24,6 +24,8 @@ namespace SiteCRM.Core.Entities
         public string texto { get; set; } = string.Empty;
         public string img { get; set; }
         public DateTime dataPost { get; set; }
+        public int IdIgreja { get; private set; }
+        public Igreja Igreja { get; private set; }
 
     }
 }

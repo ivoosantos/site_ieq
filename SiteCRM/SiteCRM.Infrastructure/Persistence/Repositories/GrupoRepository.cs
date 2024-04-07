@@ -39,7 +39,7 @@ namespace SiteCRM.Infrastructure.Persistence.Repositories
 
 		public async Task<Grupo> GetByIdAsync(int id)
 		{
-			return await _dbcontext.Grupos.FindAsync(_dbcontext.Grupos, id);
+			return await _dbcontext.Grupos.FirstOrDefaultAsync(g => g.Id == id);
 		}
 	}
 }

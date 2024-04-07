@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace SiteCRM.Application.ViewModels
         public string slug { get; set; }
         public string categoria { get; set; }
         public string nome { get; set; }
+        public virtual byte[] imgByte { get; set; }
 
         public GrupoViewModel(int _id, string _img, string _titulo, string _descricao, string _slug, string _categoria, string _nome)
         {

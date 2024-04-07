@@ -12,5 +12,6 @@ namespace SiteCRM.Application.Commands.CreateSobre
         public string titulo { get; set; }
         public string descricao { get; set; }
         public string tipo { get; set; }
+        public int idIgreja { get; set; }
     }
 }

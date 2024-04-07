@@ -26,6 +26,8 @@ namespace SiteCRM.Infrastructure
         public DbSet<Missoes> Missoes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserPermissions> UserPermissions { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Igreja> Igrejas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
