@@ -1,6 +1,15 @@
 # site_ieq
 Desenvolvimento do Site com CRM para igrejas.
 
+# Tecnologias, Bibliotecas e Padrões
+- .Net 8
+- Blazor
+- DDD
+- CQRS
+- Mediator
+- JWT
+- PostgreSQL
+
 # Comandos:
 ## Git Flow
 - git flow init -> aperte enter até o fim
