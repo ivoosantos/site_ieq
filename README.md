@@ -13,7 +13,7 @@ Desenvolvimento do Site com CRM para igrejas.
 # Comandos:
 ## Git Flow
 - git flow init -> aperte enter até o fim
-- criar branch: git flow feature start <nome da branch>
+- criar branch: git flow feature start nome_da_branch
 - atualizar a branch nova no GitHub (Web): git flow feature publish
 - finalizar brach: git flow feature finish
   obs.: Se vc estiver dentro a branch que precisa finalizar não precisa colocar o nome dela no final, mas se estiver fora dela, precisa colocar o nome dela no final do comando.
