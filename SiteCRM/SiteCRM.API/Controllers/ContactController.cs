@@ -22,10 +22,10 @@ namespace SiteCRM.API.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Post(CreateContactCommand command)
+        public async Task<IActionResult> Post([FromBody]CreateContactCommand command)
         {
             if(!ModelState.IsValid) return BadRequest(ModelState.IsValid);
-
+            command.data = DateTime.Now.ToUniversalTime();
             var insert = await _mediator.Send(command);
 
             return Ok(insert);

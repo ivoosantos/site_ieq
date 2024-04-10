@@ -1,4 +1,13 @@
 ﻿@page "/Contato"
+@using System.Net.Http.Json
+@using Newtonsoft;
+@using Newtonsoft.Json
+@using SiteCRM.FrontEnd.Models
+@using System.Text
+@inject HttpClient http
+@inject NavigationManager NavigationManager;
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
 
 <PageTitle>Contato</PageTitle>
 
@@ -40,7 +49,7 @@
     <br />
     <div class="row">
         <div class="col col-md-6">
-            <form method="post" action="" enctype="multipart/form-data">
+            <EditForm FormName="informacao" Model="@contato" enctype="multipart/form-data" OnValidSubmit="PostInformacao">
                 <div class="form-group col-md-12">
                     <div class="alert alert-info" role="alert">
                         <h5>Informações sobre a Igreja</h5>
@@ -48,27 +57,27 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label for="inputNome4">Nome</label>
-                    <input type="text" name="nome" class="form-control" id="inputNome4" placeholder="Nome">
+                    <InputText type="text" @bind-Value="contato.nome" class="form-control" id="inputNome4" placeholder="Nome"/>
                 </div>
 
                 <div class="form-group col-md-12">
                     <label for="inputTelefone4">Telefone</label>
-                    <input type="phone" name="tele" class="form-control" id="inputTelefone4" placeholder="Telefone">
+                    <InputText type="phone" @bind-Value="contato.telefone" class="form-control" id="inputTelefone4" placeholder="Telefone"/>
                 </div>
                 <div class="form-group col-md-12">
                     <label for="inputEmail">E-mail</label>
-                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="E-mail">
+                    <InputText type="email" @bind-Value="contato.email" class="form-control" id="inputEmail" placeholder="E-mail" />
                 </div>
 
                 <div class="form-group col-md-12">
                     <label for="validationTextarea">Mensagem</label>
-                    <textarea name="message" class="form-control" id="validationTextarea" rows="6"></textarea>
+                    <InputTextArea @bind-Value="contato.mensagem" class="form-control" id="validationTextarea" rows="6"></InputTextArea>
 
                 </div>
                 <div class="form-group col-md-12">
-                    <input name="enviar" type="submit" value="Enviar" class="special btn btn-success" />
+                    <button type="submit" class="special btn btn-success">Enviar</button>
                 </div>
-            </form>
+            </EditForm>
         </div>
 
         <!--Área do formulário de pedido de oração-->
@@ -78,39 +87,120 @@
                     <h5>Pedidos de Oração</h5>
                 </div>
             </div>
-            <form method="post" action="" enctype="multipart/form-data">
+            <EditForm FormName="oracao" Model="@oracao" enctype="multipart/form-data" OnValidSubmit="PostOracao">
                 <!--<div class="form-row">
                 </div>-->
                 <div class="form-group col-md-12">
                     <label for="inputNome4">Nome</label>
-                    <input type="text" name="nomeOracao" class="form-control" id="inputNome4" placeholder="Nome">
+                    <InputText type="text" @bind-Value="oracao.nome" class="form-control" id="inputNome4" placeholder="Nome" />
                 </div>
 
                 <div class="form-group col-md-12">
                     <label for="inputTelefone4">Telefone</label>
-                    <input type="phone" name="teleOracao" class="form-control" id="inputTelefone4" placeholder="Telefone">
+                    <InputText type="phone" @bind-Value="oracao.telefone" class="form-control" id="inputTelefone4" placeholder="Telefone" />
                 </div>
                 <div class="form-group col-md-12">
                     <label for="inputEmail">E-mail</label>
-                    <input type="email" name="emailOracao" class="form-control" id="inputEmail" placeholder="E-mail">
+                    <InputText type="email" @bind-Value="oracao.email" class="form-control" id="inputEmail" placeholder="E-mail" />
                 </div>
 
                 <div class="form-group col-md-12">
 
                     <label for="validationTextarea">Escreva aqui o seu pedido de oração!</label>
-                    <textarea name="messageOracao" class="form-control" id="validationTextarea" rows="6"></textarea>
+                    <InputTextArea class="form-control" @bind-Value="oracao.mensagem" id="validationTextarea" rows="6"></InputTextArea>
 
                 </div>
 
                 <div class="form-group col-md-12">
-                    <input name="enviarOracao" type="submit" value="Enviar" class="special btn btn-success" />
+                    <button type="submit" class="special btn btn-success">Enviar</button>
                 </div>
-            </form>
+            </EditForm>
         </div>
     </div>
 </div>
 <hr>
 
 @code {
+    private ContactViewModel contato = new ContactViewModel();
+    private OracaoViewModel oracao = new OracaoViewModel();
 
+    private async void PostInformacao()
+    {
+        var url = $"https://localhost:7048/api/contact";
+
+        contato.IsPrayer = false;
+        contato.IdIgreja = 1;
+
+        var obj = JsonConvert.SerializeObject(contato);
+
+        var content = new StringContent(obj, Encoding.UTF8, "application/json");
+        
+        var post2 = await http.PostAsync(url, content);
+
+        if (post2.IsSuccessStatusCode)
+        {
+            AdicionouNoBanco();
+            NavigationManager.NavigateTo("/");
+        }
+        else
+            ErroAoAdicionarNoBanco();
+    }
+
+    private async void PostOracao()
+    {
+        var url = $"https://localhost:7048/api/contact";
+
+        oracao.IsPrayer = true;
+        oracao.IdIgreja = 1;
+
+        var obj = JsonConvert.SerializeObject(oracao);
+        //https://localhost:7048/api/contact?nome=Mais%20um&telefone=11967675656&email=maisum%40teste.com&mensagem=testando&data=2024-04-09&IsPrayer=true&IdIgreja=1'
+        //https://localhost:7048/api/contact?nome=Teste&telefone=11989898989&
+        // email=teste%40teste.com&mensagem=Testando&data=2024-04-09&IsPrayer=true&IdIgreja=1
+        var content = new StringContent(obj, Encoding.UTF8, "application/json");
+        // var post = await http.PostAsJsonAsync<ContactViewModel>(url, contato);
+        // var post = await http.PostAsJsonAsync(url, contato);
+        var post2 = await http.PostAsync(url, content);
+
+        if (post2.IsSuccessStatusCode)
+        {
+            AdicionouNoBanco();
+            NavigationManager.NavigateTo("/");
+        }
+        else
+            ErroAoAdicionarNoBanco();
+    }
+
+    public async void AdicionouNoBanco()
+    {
+        await JSRuntime.InvokeAsync<string>(
+            "SuccessInBD.SuccessInBanco", null
+        );
+    }
+
+    public async void ErroAoAdicionarNoBanco()
+    {
+        await JSRuntime.InvokeAsync<string>(
+            "ErrorInBanco.ErrorInBanco", null
+        );
+    }
 }
+
+
+<script>
+    (function () {
+        window.SuccessInBD = {
+            SuccessInBanco: function () {
+                return alert('Obrigado pelo contato, em breve entraremos em contato. Deus te abençoe!');
+            }
+        };
+    })();
+
+    (function () {
+        window.ErrorInBD = {
+            ErrorInBanco: function () {
+                return alert('Houve um erro, confere se preencheu tudo ou tente mais tarde. Obrigado!');
+            }
+        };
+    })();
+</script>
