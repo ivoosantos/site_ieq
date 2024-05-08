@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using SiteCRM.Application.Queries.GetByIdCarousel;
 using SiteCRM.Core.Entities;
 using SiteCRM.Core.Repositories;
 using System;
@@ -24,6 +25,8 @@ namespace SiteCRM.Application.Commands.CreateCarousel
             using Stream fileStream = new FileStream(filePath, FileMode.Create);
             request.File.CopyTo(fileStream);
             fileStream.FlushAsync().Wait();
+
+            //var igreja = await _carouselRepository.GetByIdAsync(request.IdIgreja);
 
             var carousel = new Carousel(filePath, request.titulo, request.informacao, request.end_url, request.active_img, request.IdIgreja);
 

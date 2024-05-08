@@ -38,7 +38,7 @@ namespace SiteCRM.Infrastructure.Persistence.Repositories
 
         public async Task<Carousel> GetByIdAsync(int id)
         {
-            return await _dbcontext.Carousels.FindAsync(id);
+            return await _dbcontext.Carousels.FirstOrDefaultAsync(c => c.Id == id);//.FindAsync(id);
         }
     }
 }

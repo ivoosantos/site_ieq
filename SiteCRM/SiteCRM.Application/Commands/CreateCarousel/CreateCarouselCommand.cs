@@ -16,6 +16,6 @@ namespace SiteCRM.Application.Commands.CreateCarousel
         public string img { get; set; }
         public bool active_img { get; set; }
         public virtual IFormFile File { get; set; }
-        public int IdIgreja { get; private set; }
+        public int IdIgreja { get; set; }
     }
 }

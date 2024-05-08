@@ -8,7 +8,7 @@ namespace SiteCRM.Core.Entities
 {
     public class Carousel : BaseEntity
     {
-        public Carousel(string img, string titulo, string informacao, string end_url, bool active_img, int idIgreja)
+        public Carousel(string img, string titulo, string informacao, string? end_url, bool active_img, int idIgreja)
         {
             this.img = img;
             this.titulo = titulo;
@@ -18,10 +18,10 @@ namespace SiteCRM.Core.Entities
             this.IdIgreja = idIgreja;
         }
 
-        public string img { get; set; }
+        public string? img { get; set; }
         public string titulo { get; set; }
         public string informacao { get; set; }
-        public string end_url { get; set; }
+        public string? end_url { get; set; }
         public bool active_img { get; set; }
         public int IdIgreja { get; private set; }
         public Igreja Igreja { get; private set; }

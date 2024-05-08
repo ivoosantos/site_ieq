@@ -22,7 +22,7 @@
 				 src="image/Banner-sobre.jpg" alt="Imagem sobre a história"
 				 preserveAspectRatio="xMidYMid slice" focusable="false" role="img" />
 			<br /><br />
-			@if (About != null)
+			@if (About != null && About.Count > 0)
 			{
 				<p>@About[0].descricao</p>
 			}

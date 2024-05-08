@@ -1,30 +1,36 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">SiteCRM.FrontEnd</a>
-    </div>
-</div>
+﻿<header>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #483D8B;">
+        <img src="image/logo.png" class="img-fluid" alt="Imagem responsiva" width="80" height="80">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" style="color: #F0F8FF;" href="">Home <span class="sr-only">(atual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #F0F8FF;" href="/Sobre">Igreja</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #F0F8FF;" href="/Grupos">Grupos</a>
+                </li>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
+                <li class="nav-item">
+                    <a class="nav-link disabled" style="color: #F0F8FF;" href="/Missoes">Ações Sociais</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" style="color: #F0F8FF;" href="/Blog">Pregações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #F0F8FF;" href="/Contato">Fale Conosco</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                @* <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> *@
+                <a href="/admin" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>
+            </form>
         </div>
     </nav>
-</div>
+</header>
 
