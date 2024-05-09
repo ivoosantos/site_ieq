@@ -27,6 +27,11 @@ namespace SiteCRM.Application.Queries.GetAllGrupos
                 .Select(g => new GrupoViewModel(g.Id, g.img, g.titulo, g.descricao, g.slug, g.categoria, g.nome))
                 .ToList();
 
+            listGroup.ForEach(g =>
+            {
+                g.imgByte = File.ReadAllBytes(g.img);
+            });
+
             return listGroup;
         }
     }

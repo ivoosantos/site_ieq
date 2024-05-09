@@ -41,6 +41,10 @@ namespace SiteCRM.API.Controllers
 
             if (resp is null) return NotFound();
 
+            var dataBytes = System.IO.File.ReadAllBytes(resp.img);
+
+            resp.imgByte = dataBytes;
+
             return Ok(resp);
         }
 

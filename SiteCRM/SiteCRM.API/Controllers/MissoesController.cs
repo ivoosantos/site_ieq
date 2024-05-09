@@ -23,21 +23,14 @@ namespace SiteCRM.API.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Post([FromForm] CreateMissaoCommand command)
+        [AllowAnonymous]
+        public async Task<IActionResult> Post([FromForm] CreateMissaoCommand command)
 		{
 			var filePath = Path.Combine("Storage", command.File.FileName);
 			using Stream fileStream = new FileStream(filePath, FileMode.Create);
             command.File.CopyTo(fileStream);
 			fileStream.FlushAsync().Wait();
-
-			//var missao = new Missoes(viewModel.titulo, viewModel.slug, viewModel.texto, filePath);
-			//var command = new CreateMissaoCommand
-			//{
-			//	titulo = viewModel.titulo,
-			//	slug = viewModel.slug,
-			//	texto = viewModel.texto,
-			//	img = filePath
-			//};
+			command.img = filePath;
 
 			var resp = await _mediator.Send(command);
 			
@@ -45,8 +38,9 @@ namespace SiteCRM.API.Controllers
 		}
 
 		[HttpGet]
+        [AllowAnonymous]
 		[Route("{id}")]
-		public async Task<IActionResult> GetMissao(int id)
+        public async Task<IActionResult> GetMissao(int id)
 		{
 			var mission = new GetMissaoQuery(id);
 
@@ -70,7 +64,8 @@ namespace SiteCRM.API.Controllers
 		}
 
 		[HttpGet]
-		[Route("listar")]
+        [AllowAnonymous]
+        [Route("listar")]
 		public async Task<IActionResult> GetAll()
 		{
 			var command = new GetAllMissoesQuery();
