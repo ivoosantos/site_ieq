@@ -29,14 +29,7 @@ namespace SiteCRM.API.Controllers
             using Stream fileStream = new FileStream(filePath, FileMode.Create);
             command.File.CopyTo(fileStream);
             fileStream.FlushAsync().Wait();
-
-            //var command = new CreateBlogCommand
-            //{
-            //    titulo = blogViewModel.titulo,
-            //    slug = blogViewModel.slug,
-            //    texto = blogViewModel.texto,
-            //    img = filePath
-            //};
+            command.img = filePath;
 
             var resp =  await _mediator.Send(command);
 
