@@ -59,7 +59,6 @@ namespace SiteCRM.API.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        [AllowAnonymous]
         public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteContactCommand(id);

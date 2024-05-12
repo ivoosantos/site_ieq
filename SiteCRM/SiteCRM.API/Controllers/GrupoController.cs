@@ -21,7 +21,6 @@ namespace SiteCRM.API.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> Post([FromForm]CreateGrupoCommand command)
         {
             var resp = await _mediator.Send(command);
@@ -50,7 +49,6 @@ namespace SiteCRM.API.Controllers
 
         [Route("{id}")]
         [HttpDelete]
-        [AllowAnonymous]
         public async Task<IActionResult> Delete(int id)
         {
             var group = new DeleteGrupoCommand(id);
@@ -70,5 +68,7 @@ namespace SiteCRM.API.Controllers
 
             return Ok(listGroup);
         }
+
+        //TODO - Implementar Alteração
     }
 }

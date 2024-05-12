@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace SiteCRM.API.Controllers
 {
     [Route("api/carousel")]
-    //[Authorize]
+    [Authorize]
     public class CarouselController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -40,6 +40,7 @@ namespace SiteCRM.API.Controllers
 
         [HttpGet]
         [Route("listar")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAll()
         {
             var command = new GetAllCarouselQuery();
@@ -55,6 +56,7 @@ namespace SiteCRM.API.Controllers
 
         [HttpGet]
         [Route("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetById(int id)
         {
             var command = new GetByIdCarouselQuery(id);
@@ -67,5 +69,7 @@ namespace SiteCRM.API.Controllers
 
             return Ok(resp);
         }
+
+        //TODO - Implementar Alteração
     }
 }

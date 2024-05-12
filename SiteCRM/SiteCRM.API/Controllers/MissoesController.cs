@@ -12,7 +12,7 @@ namespace SiteCRM.API.Controllers
 {
 	[Route("api/missoes")]
 	[ApiController]
-	//[Authorize]
+	[Authorize]
 	public class MissoesController : ControllerBase
 	{
 		private readonly IMediator _mediator;
@@ -23,7 +23,6 @@ namespace SiteCRM.API.Controllers
 		}
 
 		[HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> Post([FromForm] CreateMissaoCommand command)
 		{
 			var filePath = Path.Combine("Storage", command.File.FileName);
@@ -79,5 +78,8 @@ namespace SiteCRM.API.Controllers
 
 			return Ok(listMissoes);
 		}
-	}
+
+        //TODO - Implementar o Delete
+        //TODO - Implementar Alteração
+    }
 }

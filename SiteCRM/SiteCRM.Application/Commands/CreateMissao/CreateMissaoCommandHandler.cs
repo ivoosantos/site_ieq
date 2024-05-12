@@ -21,7 +21,6 @@ namespace SiteCRM.Application.Commands.CreateMissao
 		public async Task<int> Handle(CreateMissaoCommand request, CancellationToken cancellationToken)
 		{
 			var missao = new Missoes(request.titulo, request.slug, request.texto, request.img, request.idIgreja);
-			//var missao = new Missoes();
 
 			await _missoesRepository.AddAsync(missao);
 

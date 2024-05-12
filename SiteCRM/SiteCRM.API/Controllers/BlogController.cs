@@ -22,7 +22,6 @@ namespace SiteCRM.API.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> Post([FromForm] CreateBlogCommand command)
         {
             var filePath = Path.Combine("Storage", command.File.FileName);
@@ -69,12 +68,13 @@ namespace SiteCRM.API.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        [AllowAnonymous]
         public async Task<IActionResult> Delete(int id)
         {
             var blog = new DeleteBlogCommand(id);
             var del = await _mediator.Send(blog);
             return NoContent();
         }
+
+        //TODO - Implementar Alteração
     }
 }

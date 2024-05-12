@@ -55,5 +55,9 @@ namespace SiteCRM.API.Controllers
 
 			return Ok(loginUserviewModel);
 		}
-	}
+
+        //TODO - Implementar Alteração
+        //TODO - Implementar Delete
+        //TODO - Implementar GetAll
+    }
 }
